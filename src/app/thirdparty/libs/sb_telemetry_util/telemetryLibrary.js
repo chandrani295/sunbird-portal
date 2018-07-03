@@ -2062,6 +2062,41 @@ var EkTelemetry = (function () {
     instance.updateValues(options)
     instance._dispatch(instance.getEvent('INTERACT', data))
   }
+  /**
+   IITBOMBAYX Chandrani Kar   Shreya Shambhawi Singh
+  *Which is used to log the bookmark added telemetry event.
+  * @param {object} data       [data which is need to pass in this event ex: {"type":"player","mode":"ContentPlayer","pageid":"splash"}]
+  * @param {object} options    [It can have `context, object, actor` can be explicitly passed in this event]
+  */
+  this.ektelemetry.bookmark_added=function(data,options)
+  {
+     console.log("TELEMETRY LIBRARY EKTELEMETRY.BOOKMARK_ADDED")
+     if (!instance.hasRequiredData(data, ['bookmark_id', 'component_type', 'component_usage_id','course_id'])) {
+      console.error('Invalid bookmark_added_data')
+      return
+    }
+    instance.updateValues(options)
+    instance._dispatch(instance.getEvent('BOOKMARK_ADDED', data))
+  } 
+
+
+/**
+   IITBOMBAYX   Shreya Shambhawi Singh Chandrani Kar  
+  *Which is used to log the bookmark removed telemetry event.
+  * @param {object} data       [data which is need to pass in this event ex: {"type":"player","mode":"ContentPlayer","pageid":"splash"}]
+  * @param {object} options    [It can have `context, object, actor` can be explicitly passed in this event]
+  */
+  this.ektelemetry.bookmark_removed=function(data,options)
+  {
+     console.log("TELEMETRY LIBRARY EKTELEMETRY.BOOKMARK_REMOVED")
+     if (!instance.hasRequiredData(data, ['bookmark_id', 'component_type', 'component_usage_id','course_id'])) {
+      console.error('Invalid bookmark_removed_data')
+      return
+    }
+    instance.updateValues(options)
+    instance._dispatch(instance.getEvent('BOOKMARK_REMOVED', data))
+  } 
+
 
   /**
  * Which is used to log the assess telemetry event.
