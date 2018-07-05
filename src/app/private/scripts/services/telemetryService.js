@@ -532,7 +532,7 @@ angular.module('playerApp')
        // objId->course_id
         //toc.version, rollup, objRollup
        // edata: this.bookmarkEventData(bookmark_id, 'bookmark-added',component_usage_id,objId),
-        edata: this.bookmark_addedEventData(objId+edataId, edataId, pageId, objId),
+        edata: this.bookmark_addedEventData(pageId+edataId, edataId, pageId, objId),
         context: this.getContextData(contextData),
         object: this.getObjectData(objectData),
         tags: _.concat([], org.sunbird.portal.channel)
@@ -565,7 +565,7 @@ angular.module('playerApp')
        // objId->course_id
         //toc.version, rollup, objRollup
        // edata: this.bookmarkEventData(bookmark_id, 'bookmark-added',component_usage_id,objId),
-        edata: this.bookmark_removedEventData(objId+edataId, edataId, pageId, objId),
+        edata: this.bookmark_removedEventData(pageId+edataId, edataId, pageId, objId),
         context: this.getContextData(contextData),
         object: this.getObjectData(objectData),
         tags: _.concat([], org.sunbird.portal.channel)
